@@ -29,3 +29,9 @@ build/
 
 # Agent
 .gemini/
+
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.backup
+*.tfvars
