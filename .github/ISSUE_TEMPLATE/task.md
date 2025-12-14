@@ -5,8 +5,11 @@ title: "<area>: <short description>"
 labels: ["task"]
 ---
 
-## Description
-Brief explanation of what needs to be done.
+## Goal
+Briefly state what this task completes or improves.
+
+## Context
+Why this task is needed at this stage of the project.
 
 ## Tasks
 - [ ] Task 1
@@ -14,8 +17,8 @@ Brief explanation of what needs to be done.
 
 ## Acceptance Criteria
 - [ ] Task completed successfully
-- [ ] No breaking changes
+- [ ] No breaking changes introduced
 - [ ] Verified manually or via terraform plan/apply
 
-## Related Issues
-(Optional) Link related features or bugs.
+## Notes
+(Optional) Observations or follow-up work.
