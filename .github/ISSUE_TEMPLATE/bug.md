@@ -6,7 +6,7 @@ labels: ["bug"]
 ---
 
 ## What happened?
-Describe the bug clearly and concisely.
+Describe the observed behavior or error.
 
 ## Expected behavior
 What should have happened instead?
@@ -16,10 +16,10 @@ What should have happened instead?
 2. Step two
 3. Step three
 
-## Logs / Evidence
-Paste error messages, CloudWatch logs, or screenshots if applicable.
+## Evidence
+Logs, error messages, or screenshots if available.
 
-## Fix criteria
-- [ ] Bug no longer occurs
+## Fix Criteria
+- [ ] Issue no longer occurs
 - [ ] Root cause understood
-- [ ] Regression unlikely
+- [ ] Fix does not introduce regressions

@@ -6,11 +6,11 @@ labels: ["feature"]
 ---
 
 ## Goal
-Clearly describe what this feature accomplishes and why it exists.
+One or two sentences describing what this feature accomplishes.
 
 ## Context
-Why is this needed now?  
-How does it fit into the Cost Optimizer system?
+Why this feature exists and how it fits into the overall system.
+(Keep this short — just enough for orientation.)
 
 ## Tasks
 - [ ] Task 1
@@ -18,10 +18,10 @@ How does it fit into the Cost Optimizer system?
 - [ ] Task 3
 
 ## Acceptance Criteria
-- [ ] Feature works as described
-- [ ] No hardcoded secrets
-- [ ] Terraform / code applies cleanly
-- [ ] Changes are documented if needed
+- [ ] Feature works as intended
+- [ ] No hardcoded secrets or credentials
+- [ ] Changes integrate cleanly with existing system
+- [ ] Documentation updated if applicable
 
 ## Notes / Tradeoffs
-(Optional) Any decisions, limitations, or future improvements.
+(Optional) Key decisions, limitations, or deferred work.
