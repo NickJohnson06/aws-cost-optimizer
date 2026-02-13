@@ -88,4 +88,5 @@ terraform apply
 - [x] Repo initialized
 - [ ] Terraform infrastructure
 - [ ] Cost ingestion pipeline
+- [ ] Dashboard MVP
 - [ ] Recommendations engine
