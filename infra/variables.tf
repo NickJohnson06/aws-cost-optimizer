@@ -16,6 +16,24 @@ variable "environment" {
   default     = "dev"
 }
 
+variable "db_instance_class" {
+  description = "The instance type of the RDS instance"
+  type        = string
+  default     = "db.t4g.micro"
+}
+
+variable "db_name" {
+  description = "The name of the database to create"
+  type        = string
+  default     = "costoptimizer"
+}
+
+variable "db_username" {
+  description = "Username for the master DB user"
+  type        = string
+  default     = "postgres_admin"
+}
+
 variable "vpc_cidr" {
   description = "CIDR block for VPC"
   type        = string
