@@ -85,8 +85,37 @@ terraform apply
 ```
 
 ## Current Status
-- [x] Repo initialized
-- [ ] Terraform infrastructure
-- [ ] Cost ingestion pipeline
-- [ ] Dashboard MVP
-- [ ] Recommendations engine
+
+### Phase 0 — Repo & Docs
+- [x] Issue #1: repo: initialize project structure and baseline docs
+- [x] Issue #2: docs: add high-level architecture overview
+
+### Phase 1 — Terraform Foundation
+- [x] Issue #3: infra: bootstrap Terraform remote state
+- [x] Issue #4: infra: provision VPC with public and private subnets
+- [ ] Issue #5: infra: provision RDS Postgres in private subnets
+- [ ] Issue #6: infra: deploy API Gateway + API Lambda placeholder
+- [ ] Issue #7: infra: deploy S3 + CloudFront for frontend
+- [ ] Issue #8: infra: add Cognito user pool and app client
+
+### Phase 2 — Database & API Foundation
+- [ ] Issue #9: db: apply cost analytics schema
+- [ ] Issue #10: api: add DB connectivity + health check
+
+### Phase 3 — Cost Ingestion Pipeline
+- [ ] Issue #11: infra: grant Cost Explorer permissions to ingestion Lambda
+- [ ] Issue #12: lambda: ingest daily Cost Explorer data into Postgres
+- [ ] Issue #13: infra: schedule daily ingestion with EventBridge
+
+### Phase 4 — Dashboard MVP
+- [ ] Issue #14: api: implement summary + trends endpoints
+- [ ] Issue #15: ui: build spend dashboard
+- [ ] Issue #16: deploy: publish frontend build to S3 + CloudFront
+
+### Phase 5 — Recommendations Engine
+- [ ] Issue #17: lambda: generate rule-based recommendations
+- [ ] Issue #18: ui: add recommendations table + status updates
+
+### Phase 6 — Applied ML
+- [ ] Issue #19: ml: implement cost anomaly detection
+- [ ] Issue #20: ui: visualize cost anomalies
