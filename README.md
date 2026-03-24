@@ -93,7 +93,7 @@ terraform apply
 ### Phase 1 — Terraform Foundation
 - [x] Issue #3: infra: bootstrap Terraform remote state
 - [x] Issue #4: infra: provision VPC with public and private subnets
-- [ ] Issue #5: infra: provision RDS Postgres in private subnets
+- [x] Issue #5: infra: provision RDS Postgres in private subnets
 - [ ] Issue #6: infra: deploy API Gateway + API Lambda placeholder
 - [ ] Issue #7: infra: deploy S3 + CloudFront for frontend
 - [ ] Issue #8: infra: add Cognito user pool and app client
