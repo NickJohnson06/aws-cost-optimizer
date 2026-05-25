@@ -27,3 +27,14 @@ output "db_secret_arn" {
   description = "The ARN of the Secrets Manager secret containing the RDS master user password"
   value       = aws_db_instance.postgres.master_user_secret[0].secret_arn
 }
+
+output "api_gateway_url" {
+  description = "The URL of the API Gateway stage"
+  value       = aws_api_gateway_stage.api.invoke_url
+}
+
+output "api_lambda_function_name" {
+  description = "The name of the API Lambda function"
+  value       = aws_lambda_function.api.function_name
+}
+
