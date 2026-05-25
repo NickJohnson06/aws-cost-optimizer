@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AWS Cost Optimizer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-color: #0d0f14;
+      --card-bg: #161a23;
+      --text-primary: #f3f4f6;
+      --text-secondary: #9ca3af;
+      --primary: #3b82f6;
+      --primary-glow: rgba(59, 130, 246, 0.15);
+      --accent: #10b981;
+      --accent-glow: rgba(16, 185, 129, 0.15);
+      --border: #242b3a;
+    }
+    
+    body {
+      margin: 0;
+      font-family: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-primary);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 600px;
+      padding: 2.5rem;
+      background-color: var(--card-bg);
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 50px var(--primary-glow);
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .container:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 25px 45px rgba(0, 0, 0, 0.4), 0 0 60px rgba(59, 130, 246, 0.25);
+    }
+
+    .logo-container {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .logo-icon {
+      width: 64px;
+      height: 64px;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 16px rgba(59, 130, 246, 0.3);
+    }
+
+    .logo-icon svg {
+      width: 32px;
+      height: 32px;
+      fill: none;
+      stroke: #ffffff;
+      stroke-width: 2.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    h1 {
+      margin: 0 0 0.5rem 0;
+      font-size: 2.25rem;
+      font-weight: 800;
+      background: linear-gradient(to right, #ffffff, #9ca3af);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      background-color: var(--accent-glow);
+      color: var(--accent);
+      border: 1px solid rgba(16, 185, 129, 0.2);
+      margin-bottom: 1.5rem;
+    }
+
+    .status-badge::before {
+      content: '';
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: var(--accent);
+      margin-right: 0.5rem;
+      box-shadow: 0 0 8px var(--accent);
+    }
+
+    p {
+      color: var(--text-secondary);
+      font-size: 1.125rem;
+      line-height: 1.6;
+      margin: 0 0 2rem 0;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.75rem 1.5rem;
+      background: linear-gradient(135deg, var(--primary), #2563eb);
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 600;
+      border-radius: 12px;
+      transition: all 0.2s ease;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(59, 130, 246, 0.4);
+    }
+
+    .btn:active {
+      transform: translateY(0);
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-top: 2.5rem;
+      text-align: left;
+      border-top: 1px solid var(--border);
+      padding-top: 1.5rem;
+    }
+
+    .info-item {
+      font-size: 0.875rem;
+    }
+
+    .info-label {
+      color: var(--text-secondary);
+      margin-bottom: 0.25rem;
+    }
+
+    .info-value {
+      font-family: monospace;
+      color: var(--text-primary);
+      background-color: rgba(255, 255, 255, 0.03);
+      padding: 0.35rem 0.6rem;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      word-break: break-all;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="logo-container">
+      <div class="logo-icon">
+        <svg viewBox="0 0 24 24">
+          <path d="M3 3v18h18"/>
+          <path d="m18.7 8-5.1 5.2-2.8-2.7L7 14.3"/>
+        </svg>
+      </div>
+    </div>
+    <h1>AWS Cost Optimizer</h1>
+    <div class="status-badge">Frontend Deployed</div>
+    <p>The static hosting bucket and CloudFront distribution are fully provisioned and active. The React single page application skeleton is ready for implementation.</p>
+    
+    <button class="btn" onclick="testApi()">Test Proxy API</button>
+
+    <div class="info-grid">
+      <div class="info-item">
+        <div class="info-label">S3 Bucket</div>
+        <div class="info-value">aws-cost-optimizer-frontend-dev</div>
+      </div>
+      <div class="info-item">
+        <div class="info-label">API Gateway Path</div>
+        <div class="info-value">/api/*</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    async function testApi() {
+      const btn = document.querySelector('.btn');
+      const originalText = btn.textContent;
+      btn.textContent = 'Calling API...';
+      btn.disabled = true;
+      
+      try {
+        const response = await fetch('/api/health');
+        const data = await response.json();
+        alert('API Response:\n' + JSON.stringify(data, null, 2));
+      } catch (error) {
+        alert('Error calling proxy API:\n' + error.message);
+      } finally {
+        btn.textContent = originalText;
+        btn.disabled = false;
+      }
+    }
+  </script>
+</body>
+</html>
