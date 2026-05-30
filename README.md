@@ -99,7 +99,7 @@ terraform apply
 - [x] Issue #8: infra: add Cognito user pool and app client
 
 ### Phase 2 — Database & API Foundation
-- [ ] Issue #9: db: apply cost analytics schema
+- [x] Issue #9: db: apply cost analytics schema
 - [ ] Issue #10: api: add DB connectivity + health check
 
 ### Phase 3 — Cost Ingestion Pipeline
