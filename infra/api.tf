@@ -37,6 +37,34 @@ resource "aws_iam_role_policy_attachment" "lambda_vpc" {
   policy_arn = "arn:aws:iam::aws:policy/service-role/AWSLambdaVPCAccessExecutionRole"
 }
 
+# IAM Policy to allow Lambda to retrieve the DB secret from Secrets Manager
+resource "aws_iam_policy" "lambda_secrets" {
+  name        = "${var.project_name}-lambda-secrets-policy-${var.environment}"
+  description = "Allow API Lambda to retrieve RDS secrets from Secrets Manager"
+
+  policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [
+      {
+        Effect = "Allow"
+        Action = [
+          "secretsmanager:GetSecretValue"
+        ]
+        Resource = [
+          aws_db_instance.postgres.master_user_secret[0].secret_arn
+        ]
+      }
+    ]
+  })
+}
+
+# Attach the secrets policy to the Lambda execution role
+resource "aws_iam_role_policy_attachment" "lambda_secrets" {
+  role       = aws_iam_role.api_lambda.name
+  policy_arn = aws_iam_policy.lambda_secrets.arn
+}
+
+
 # Security Group for the API Lambda
 resource "aws_security_group" "api_lambda" {
   name        = "${var.project_name}-api-lambda-sg-${var.environment}"
